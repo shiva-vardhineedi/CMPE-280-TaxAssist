@@ -56,3 +56,4 @@ A simple web-based tax assistant designed to answer tax-related questions using 
 ![Alt text](screenshots/image.png)
 ![Alt text](screenshots/image-1.png)
 ![Answers only tax related questions](screenshots/image-2.png)
+![Can have previous history and maintain converation](screenshots/history_image.png)
