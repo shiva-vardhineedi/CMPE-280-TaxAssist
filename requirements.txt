@@ -1,0 +1,5 @@
+fastapi[all]
+anthropic
+requests
+uvicorn
+python-dotenv
