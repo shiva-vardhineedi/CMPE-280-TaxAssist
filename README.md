@@ -9,6 +9,10 @@ A simple web-based tax assistant designed to answer tax-related questions using 
 - **Session Persistence**: Chat history persists across page refreshes using `sessionStorage`.
 - **Loading Indicator**: A smooth loading animation (three dots) appears while waiting for the assistant's response.
 - **Scroll Banner**: A "scroll-to-bottom" banner appears when new messages arrive, allowing users to quickly view the latest response.
+- **Contextual Conversation Maintenance**: The assistant can maintain the context of the conversation, allowing it to remember previous user inputs like income details or filing status, and provide relevant follow-up responses accordingly.
+- **Multi-step Conversations**: Users can provide additional details over the course of the conversation (e.g., providing tax deductions or filing status) without needing to repeat previous information.
+- **Clarification Requests**: If needed, the assistant can ask clarifying questions to ensure the correct context is maintained, making the conversation more natural and user-friendly.
+
 
 ## Technologies Used
 - **Frontend**: 
