@@ -1,0 +1,321 @@
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('https://mma.prnewswire.com/media/379251/Deloitte_Logo.jpg') left top / 35% no-repeat, 
+                url('https://s3-us-west-2.amazonaws.com/conf-sites-prod/wp-content/uploads/sites/12/2020/11/10095722/San-Jose-State-University-Logo.jpg') right bottom / 35% no-repeat;
+    background-size: 35%, 35%;
+    background-color: #f4f4f4;
+}
+
+/* Chat container */
+.chat-container {
+    width: 60vw;
+    max-width: 800px;
+    height: 70vh;
+    max-height: 700px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+/* Chat box */
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    border: 1px solid black;
+    max-height: 100%;
+}
+
+/* Placeholder message */
+.chat-box:empty::before {
+    content: "Hi there, ask your tax-related questions here!";
+    font-size: 18px;
+    color: #999;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Messages */
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    word-wrap: break-word;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* User and assistant messages */
+.message.user {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.message.assistant {
+    text-align: left;
+}
+
+/* Avatar */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message.user .avatar {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Message content */
+.message-content {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+.message.user .message-content {
+    background-color: #e1f5fe;
+    color: #333;
+}
+
+.message.assistant .message-content {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+/* Loading dots */
+.loading {
+    display: inline-block;
+    position: relative;
+    width: 45px;
+    height: 20px;
+}
+
+.loading div {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #007bff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading div:nth-child(1) { left: 8px; animation: loading1 0.6s infinite; }
+.loading div:nth-child(2) { left: 16px; animation: loading2 0.6s infinite; }
+.loading div:nth-child(3) { left: 32px; animation: loading2 0.6s infinite; }
+.loading div:nth-child(4) { left: 40px; animation: loading3 0.6s infinite; }
+
+@keyframes loading1 { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes loading3 { 0% { transform: scale(1); } 100% { transform: scale(0); } }
+@keyframes loading2 { 0% { transform: translate(0, 0); } 100% { transform: translate(24px, 0); } }
+
+/* Scroll-to-bottom banner */
+.scroll-banner {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Input container */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Input box */
+.input-box {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.input-box:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Send button */
+.send-button {
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-left: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.send-button:active {
+    transform: translateY(0);
+}
+
+/* Toggle switch for Enable History */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 90vw;
+        height: 80vh;
+    }
+    .send-button {
+        padding: 12px 20px;
+    }
+    .input-box {
+        padding: 12px;
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the toggle to the right */
+    padding: 10px;
+}
+
+/* History toggle */
+.history-toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: flex-end; /* Ensure it's aligned to the right */
+}
+
+/* Toggle label */
+.toggle-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Toggle switch for Enable History */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
