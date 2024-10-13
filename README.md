@@ -40,11 +40,15 @@ A simple web-based tax assistant designed to answer tax-related questions using 
     ```
     uvicorn main:app --reload
 ## Example User Flow
-```
-User: "How much tax should I pay if I earned $60,000 last year?"
-Assistant: "For an income of $60,000, your estimated federal tax liability will depend on your filing status and deductions. Could you provide your filing status and any deductions?"
-User: "I am single with a standard deduction."
-Assistant: "For a single filer with the standard deduction of $12,950, your taxable income is $47,050. Based on 2023 tax brackets, your estimated tax is approximately $5,658."
+    ```
+    User: "How much tax should I pay if I earned $60,000 last year?"
+    Assistant: "For an income of $60,000, your estimated federal tax liability will depend on your filing status and deductions. Could you provide your filing status and any deductions?"
+    User: "I am single with a standard deduction."
+    Assistant: "For a single filer with the standard deduction of $12,950, your taxable income is $47,050. Based on 2023 tax brackets, your estimated tax is approximately $5,658."
+    ```
 
+## Screenshots:
 
-
+![Alt text](screenshots/image.png)
+![Alt text](screenshots/image-1.png)
+![Answers only tax related questions](screenshots/image-2.png)
